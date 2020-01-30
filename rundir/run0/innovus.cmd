@@ -189,3 +189,11 @@ uiSetTool move
 report_timing -max_paths 5 > ${design}.post_route.timing.rpt
 report_power -outfile aes_cipher_top.post_route.power.rpt
 summaryReport -nohtml -outfile aes_cipher_top.post_route.summary.rpt
+saveDesign floorplan.enc
+setPlaceMode -timingDriven true -reorderScan false -congEffort medium -modulePlan false
+setOptMode -effort high -powerEffort high -leakageToDynamicRatio 0.5 -fixFanoutLoad true -restruct true -verbose true
+place_opt_design
+saveDesign placement.enc
+report_timing -max_paths 5 > ${design}.post_route.timing.rpt
+report_power -outfile aes_cipher_top.post_route.power.rpt
+summaryReport -nohtml -outfile aes_cipher_top.post_route.summary.rpt
