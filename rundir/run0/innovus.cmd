@@ -206,3 +206,21 @@ saveDesign cts.enc
 report_timing -max_paths 5 > ${design}.post_route.timing.rpt
 report_power -outfile aes_cipher_top.post_route.power.rpt
 summaryReport -nohtml -outfile aes_cipher_top.post_route.summary.rpt
+setNanoRouteMode -quiet -drouteAllowMergedWireAtPin false
+setNanoRouteMode -quiet -drouteFixAntenna true
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven true
+setNanoRouteMode -quiet -routeSiEffort medium
+setNanoRouteMode -quiet -routeWithSiPostRouteFix false
+setNanoRouteMode -quiet -drouteAutoStop true
+setNanoRouteMode -quiet -routeSelectedNetOnly false
+setNanoRouteMode -quiet -drouteStartIteration default
+routeDesign
+setExtractRCMode -engine postRoute
+extractRC
+setAnalysisMode -analysisType onChipVariation -cppr both
+optDesign -postRoute -setup -hold
+saveDesign route.enc
+report_timing -max_paths 5 > ${design}.post_route.timing.rpt
+report_power -outfile aes_cipher_top.post_route.power.rpt
+summaryReport -nohtml -outfile aes_cipher_top.post_route.summary.rpt
