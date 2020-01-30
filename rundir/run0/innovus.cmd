@@ -197,3 +197,12 @@ saveDesign placement.enc
 report_timing -max_paths 5 > ${design}.post_route.timing.rpt
 report_power -outfile aes_cipher_top.post_route.power.rpt
 summaryReport -nohtml -outfile aes_cipher_top.post_route.summary.rpt
+set_ccopt_property -update_io_latency false
+create_ccopt_clock_tree_spec -file ../../desdir/constraints/aes_cipher_top.ccopt
+ccopt_design
+set_propagated_clock [all_clocks]
+optDesign -postCTS -hold
+saveDesign cts.enc
+report_timing -max_paths 5 > ${design}.post_route.timing.rpt
+report_power -outfile aes_cipher_top.post_route.power.rpt
+summaryReport -nohtml -outfile aes_cipher_top.post_route.summary.rpt
