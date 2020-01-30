@@ -1,0 +1,575 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2015 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v15.23-s045_1, built Fri Apr 22 12:32:52 PDT 2016
+Options:	
+Date:		Wed Jan 29 17:35:09 2020
+Host:		ieng6-ece-01.ucsd.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (4cores*8cpus*Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz 20480KB)
+OS:		CentOS release 6.10 (Final)
+
+License:
+		invs	Innovus Implementation System	15.2	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getDrawView
+<CMD> loadWorkspace -name Physical
+<CMD> win
+<CMD> set init_pwr_net vdd
+<CMD> set init_gnd_net gnd
+<CMD> set init_verilog ../../desdir/netlist/aes_cipher_top.v
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_design_settop 1
+<CMD> set init_top_cell aes_cipher_top
+<CMD> set init_lef_file ../../libdir/lef/tcbn65gplus_8lmT2.lef
+<CMD> create_library_set -name WC_LIB -timing $worst_timing_lib
+<CMD> create_library_set -name BC_LIB -timing $best_timing_lib
+<CMD> create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+<CMD> create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+<CMD> create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+<CMD> create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+<CMD> create_constraint_mode -name CON -sdc_file [list $sdc]
+<CMD> create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+<CMD> create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+<CMD> init_design -setup WC_VIEW -hold BC_VIEW
+
+Loading LEF file ../../libdir/lef/tcbn65gplus_8lmT2.lef ...
+WARNING (LEFPARS-2007): NAMESCASESENSITIVE statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 28.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 867.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 877.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1014.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1024.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1161.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1171.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1308.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1318.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1372.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1383.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1604.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1614.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1769.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1771.
+WARNING (LEFPARS-2021): turn-via is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1772.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1776.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1778.
+WARNING (LEFPARS-2021): turn-via is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1779.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file ../../libdir/lef/tcbn65gplus_8lmT2.lef at line 1783.
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'I' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+viaInitial starts at Wed Jan 29 17:36:20 2020
+viaInitial ends at Wed Jan 29 17:36:20 2020
+Reading WC_LIB timing library '/home/linux/ieng6/ee260bwi20/public/data/libraries/lib/tcbn65gpluswc.lib' ...
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN2D0' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN2D1' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN2D2' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN2D4' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN2D8' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN2XD1' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN3D0' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN3D1' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN3D2' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN3D4' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN3D8' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN3XD1' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN4D0' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN4D1' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN4D2' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN4D4' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN4D8' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AN4XD1' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AO211D0' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AO211D1' is not defined in the library.
+Message <TECHLIB-436> has exceeded the message display limit of '20'. setMessageLimit/set_message_limit sets the limit. unsetMessageLimit/unset_message_limit can be used to reset this.
+Read 811 cells in library 'tcbn65gpluswc' 
+Reading BC_LIB timing library '/home/linux/ieng6/ee260bwi20/public/data/libraries/lib/tcbn65gplusbc.lib' ...
+Read 811 cells in library 'tcbn65gplusbc' 
+*** End library_loading (cpu=0.00min, mem=0.0M, fe_cpu=0.37min, fe_real=1.25min, fe_mem=490.4M) ***
+*** Begin netlist parsing (mem=490.4M) ***
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D4' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D4' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D0' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D0' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D4' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D4' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D0' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D0' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2D4' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2D4' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2D2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2D2' is defined in LEF but not in the timing library.
+**WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Created 811 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../../desdir/netlist/aes_cipher_top.v'
+
+*** Memory Usage v#1 (Current mem = 490.352M, initial mem = 151.938M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=490.4M) ***
+Set top cell to aes_cipher_top.
+Hooked 1622 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell aes_cipher_top ...
+*** Netlist is unique.
+** info: there are 1680 modules.
+** info: there are 10926 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 547.430M, initial mem = 151.938M) ***
+**WARN: (IMPFP-3961):	The techSite 'dcore' has no related cells in LEF/OA library. Cannot make calculations for this site type unless cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'ccore' has no related cells in LEF/OA library. Cannot make calculations for this site type unless cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+WC_VIEW BC_VIEW
+Initializing multi-corner RC extraction with 2 active RC Corners ...
+Reading Capacitance Table File ../../libdir/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable ...
+**WARN: (IMPEXT-2760):	Layer M9 specified in the cap table is ignored because it is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2771):	Via VIA_8 specified in the cap table is ignored because its top layer, M9, is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+**WARN: (IMPEXT-2710):	Basic Cap table for layer M9 is ignored because the layer is not specified in the technology LEF file.
+Reading Capacitance Table File ../../libdir/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable ...
+**WARN: (IMPEXT-2760):	Layer M9 specified in the cap table is ignored because it is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2771):	Via VIA_8 specified in the cap table is ignored because its top layer, M9, is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+**WARN: (IMPEXT-2710):	Basic Cap table for layer M9 is ignored because the layer is not specified in the technology LEF file.
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: WC_VIEW
+    RC-Corner Name        : Cmax
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 125 Celsius
+    RC-Corner Cap Table   : '../../libdir/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+ 
+ Analysis View: BC_VIEW
+    RC-Corner Name        : Cmin
+    RC-Corner Index       : 1
+    RC-Corner Temperature : -40 Celsius
+    RC-Corner Cap Table   : '../../libdir/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '../../desdir/constraints/aes_cipher_top.sdc' ...
+Current (total cpu=0:00:24.2, real=0:01:17, peak res=315.7M, current mem=666.3M)
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.2, real=0:00:00.0, peak res=332.4M, current mem=684.5M)
+Current (total cpu=0:00:24.4, real=0:01:17, peak res=332.4M, current mem=684.5M)
+Total number of combinational cells: 492
+Total number of sequential cells: 303
+Total number of tristate cells: 11
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFFD1 BUFFD0 BUFFD2 BUFFD3 BUFFD4 BUFFD6 BUFFD8 BUFFD12 BUFFD16 CKBD1 CKBD0 CKBD2 CKBD3 CKBD4 CKBD6 CKBD8 CKBD12 CKBD16
+Total number of usable buffers: 18
+List of unusable buffers: BUFFD20 BUFFD24 CKBD20 CKBD24 GBUFFD1 GBUFFD3 GBUFFD2 GBUFFD4 GBUFFD8
+Total number of unusable buffers: 9
+List of usable inverters: CKND1 CKND0 CKND2 CKND3 CKND4 CKND6 CKND8 CKND12 CKND16 INVD1 INVD0 INVD2 INVD3 INVD4 INVD6 INVD8 INVD12 INVD16
+Total number of usable inverters: 18
+List of unusable inverters: CKND20 CKND24 GINVD2 GINVD1 GINVD4 GINVD3 GINVD8 INVD20 INVD24
+Total number of unusable inverters: 9
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells: DEL0 DEL005 DEL01 DEL015 DEL02 DEL1 DEL2 DEL3 DEL4
+Total number of identified unusable delay cells: 9
+All delay cells are dont_use. Buffers will be used to fix hold violations.
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           2  The techSite '%s' has no related cells i...
+WARNING   IMPEXT-2710          2  Basic Cap table for layer M%d is ignored...
+WARNING   IMPEXT-2760          2  Layer M%d specified in the cap table is ...
+WARNING   IMPEXT-2771          2  Via %s specified in the cap table is ign...
+WARNING   IMPEXT-2801          2  Resistance values are not provided in th...
+WARNING   IMPVL-159         1622  Pin '%s' of cell '%s' is defined in LEF ...
+*** Message Summary: 1633 warning(s), 0 error(s)
+
+<CMD> set_interactive_constraint_modes {CON}
+<CMD> setDesignMode -process 65
+Applying the recommended capacitance filtering threshold values for 65nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including tQuantus, IQRC and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+Updating process node dependent CCOpt properties for the 65nm process node.
+<CMD> floorPlan -site core -r 1 0.50 10.0 10.0 10.0 10.0
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> createPlaceBlockage -box {10 90 40 170}
+<CMD> createPlaceBlockage -box {45 90 75 170}
+<CMD> createPlaceBlockage -box {185 90 215 170}
+<CMD> createPlaceBlockage -box {220 90 250 170}
+<CMD> setDrawView fplan
+<CMD> gui_select -rect {-225.156 166.983 1.224 146.073}
+<CMD> uiSetTool move
+<CMD> selectObject Module u0
+<CMD> setObjFPlanBox Module u0 77.805 77.875 190.41 189.3705
+<CMD> setObjFPlanBox Module u0 77.800 78.400 179.419 190.000
+<CMD> setObjFPlanBox Module u0 77.800 78.400 181.237 190.000
+<CMD> setObjFPlanBox Module u0 77.800 84.251 181.200 190.000
+<CMD> setObjFPlanBox Module u0 77.800 83.800 181.200 176.984
+<CMD> setObjFPlanBox Module u0 77.800 83.800 181.200 174.257
+<CMD> setObjFPlanBox Module u0 77.800 86.978 181.200 173.800
+<CMD> setObjFPlanBox Module u0 77.800 84.251 181.200 173.800
+<CMD> deselectAll
+<CMD> selectObject Module us10
+<CMD> setObjFPlanBox Module us10 12.6845 200.92 59.1455 246.9235
+<CMD> setObjFPlanBox Module us10 12.600 222.442 59.000 247.600
+<CMD> setObjFPlanBox Module us10 12.600 209.714 59.000 247.600
+<CMD> setObjFPlanBox Module us10 12.6 210.709 59.0 248.509
+<CMD> setObjFPlanBox Module us10 12.600 215.169 59.000 249.400
+<CMD> deselectAll
+<CMD> selectObject Module us22
+<CMD> setObjFPlanBox Module us22 12.792 165.466 58.376 210.601
+<CMD> setObjFPlanBox Module us22 13.7095 164.8 59.3095 209.8
+<CMD> setObjFPlanBox Module us22 13.800 177.894 59.400 209.800
+<CMD> setObjFPlanBox Module us22 13.800 174.257 59.400 209.800
+<CMD> deselectAll
+<CMD> selectObject Module us11
+<CMD> setObjFPlanBox Module us11 65.5095 204.557 111.372 249.9675
+<CMD> setObjFPlanBox Module us11 65.600 215.169 111.400 249.400
+<CMD> setObjFPlanBox Module us11 64.691 215.2 110.491 249.4
+<CMD> deselectAll
+<CMD> selectObject Module us23
+<CMD> setObjFPlanBox Module us23 63.54 163.5595 109.9385 209.501
+<CMD> setObjFPlanBox Module us23 63.600 175.757 110.000 209.800
+<CMD> setObjFPlanBox Module us00 -182.344 101.513 -136.816 146.593
+<CMD> deselectAll
+<CMD> selectObject Module us00
+<CMD> setObjFPlanBox Module us00 144.7745 204.641 190.3025 249.7205
+<CMD> setObjFPlanBox Module us00 144.800 214.513 190.400 249.400
+<CMD> deselectAll
+<CMD> selectObject Module us12
+<CMD> setObjFPlanBox Module us12 144.8335 167.175 190.049 211.945
+<CMD> setObjFPlanBox Module us12 144.800 178.385 190.000 211.600
+<CMD> setObjFPlanBox Module us12 144.800 177.071 190.000 211.600
+<CMD> deselectAll
+<CMD> selectObject Module us30
+<CMD> setObjFPlanBox Module us30 201.8995 203.6285 247.8965 249.1725
+<CMD> setObjFPlanBox Module us30 201.800 215.169 247.800 249.400
+<CMD> deselectAll
+<CMD> selectObject Module us01
+<CMD> setObjFPlanBox Module us01 201.4695 166.5425 246.878 211.5035
+<CMD> setObjFPlanBox Module us01 201.400 176.414 246.800 211.600
+<CMD> setObjFPlanBox Module us01 201.400 177.728 246.800 211.600
+<CMD> deselectAll
+<CMD> selectObject Module us13
+<CMD> setObjFPlanBox Module us13 12.0385 35.1445 57.845 80.5
+<CMD> setObjFPlanBox Module us13 12.000 53.581 57.800 80.200
+<CMD> setObjFPlanBox Module us13 12.000 49.639 57.800 80.200
+<CMD> setObjFPlanBox Module us13 12.000 45.698 57.800 80.200
+<CMD> setObjFPlanBox Module us13 12.0 47.3135 57.8 81.5135
+<CMD> deselectAll
+<CMD> selectObject Module us31
+<CMD> setObjFPlanBox Module us31 12.082 0.0 57.881 45.348
+<CMD> setObjFPlanBox Module us31 12.000 12.854 57.800 46.000
+<CMD> setObjFPlanBox Module us31 12.0 12.2865 57.8 44.6865
+<CMD> setObjFPlanBox Module us31 12.000 11.800 57.800 45.041
+<CMD> deselectAll
+<CMD> selectObject Module us13
+<CMD> setObjFPlanBox Module us13 12.0 49.1135 57.8 83.3135
+<CMD> deselectAll
+<CMD> selectObject Module us31
+<CMD> setObjFPlanBox Module us31 12.0 13.7705 57.8 46.1705
+<CMD> setObjFPlanBox Module us31 12.000 12.198 57.800 46.000
+<CMD> deselectAll
+<CMD> selectObject Module us02
+<CMD> setObjFPlanBox Module us02 61.642 35.8265 107.3775 81.1115
+<CMD> setObjFPlanBox Module us02 60.943 35.857 106.743 80.857
+<CMD> setObjFPlanBox Module us02 61.000 50.953 106.800 80.200
+<CMD> setObjFPlanBox Module us02 62.971 52.0565 108.771 80.8565
+<CMD> setObjFPlanBox Module us02 63.000 42.413 108.800 80.200
+<CMD> setObjFPlanBox Module us02 63.000 44.384 108.800 80.200
+<CMD> deselectAll
+<CMD> selectObject Module us20
+<CMD> setObjFPlanBox Module us20 63.1 -4.267 108.6205 40.805
+<CMD> deselectAll
+<CMD> selectObject Module us02
+<CMD> setObjFPlanBox Module us02 62.343 44.857 108.143 80.857
+<CMD> deselectAll
+<CMD> selectObject Module u0
+<CMD> setObjFPlanBox Module u0 77.8 82.4865 181.2 172.4865
+<CMD> setObjFPlanBox Module u0 77.8 83.9705 181.2 173.9705
+<CMD> setObjFPlanBox Module u0 77.800 87.081 181.200 173.800
+<CMD> setObjFPlanBox Module u0 77.8 86.743 181.2 173.143
+<CMD> setObjFPlanBox Module u0 77.800 85.767 181.200 173.800
+<CMD> deselectAll
+<CMD> selectObject Module us02
+<CMD> setObjFPlanBox Module us02 62.4 46.8275 108.2 82.8275
+<CMD> deselectAll
+<CMD> selectObject Module us20
+<CMD> setObjFPlanBox Module us20 63.0 -0.9705 108.6 44.0295
+<CMD> setObjFPlanBox Module us20 62.3435 -4.255 107.9435 40.745
+<CMD> setObjFPlanBox Module us20 77.508 -4.255 123.108 40.745
+<CMD> deselectAll
+<CMD> selectObject Module us02
+<CMD> setObjFPlanBox Module us02 61.7435 47.314 107.5435 83.314
+<CMD> deselectAll
+<CMD> selectObject Module us20
+<CMD> setObjFPlanBox Module us20 61.835 1.0 107.435 46.0
+<CMD> setObjFPlanBox Module us20 61.800 1.000 113.716 46.000
+<CMD> setObjFPlanBox Module us20 61.800 12.198 113.800 46.000
+<CMD> setObjFPlanBox Module us20 61.800 14.825 113.800 46.000
+<CMD> deselectAll
+<CMD> selectObject Module us31
+<CMD> setObjFPlanBox Module us31 11.343 13.114 57.143 47.314
+<CMD> setObjFPlanBox Module us31 11.400 12.198 57.200 47.800
+<CMD> setObjFPlanBox Module us31 11.400 13.511 57.200 47.800
+<CMD> deselectAll
+<CMD> selectObject Module us20
+<CMD> setObjFPlanBox Module us20 61.1435 14.7435 113.1435 45.3435
+<CMD> setObjFPlanBox Module us20 61.200 15.400 111.089 46.000
+<CMD> deselectAll
+<CMD> selectObject Module us32
+<CMD> setObjFPlanBox Module us32 145.901 37.4415 192.643 83.723
+<CMD> setObjFPlanBox Module us32 146.000 47.011 192.800 83.800
+<CMD> setObjFPlanBox Module us32 142.7155 47.143 189.5155 83.143
+<CMD> deselectAll
+<CMD> selectObject Module us03
+<CMD> setObjFPlanBox Module us03 142.848 -0.301 188.52 44.921
+<CMD> setObjFPlanBox Module us03 142.800 13.511 188.400 46.000
+<CMD> setObjFPlanBox Module us03 144.7705 13.6 190.3705 46.0
+<CMD> setObjFPlanBox Module us03 142.619 13.600 190.400 46.000
+<CMD> deselectAll
+<CMD> selectObject Module us21
+<CMD> setObjFPlanBox Module us21 199.2675 40.3995 245.0105 85.692
+<CMD> setObjFPlanBox Module us21 198.543 40.6 244.343 85.6
+<CMD> setObjFPlanBox Module us21 198.600 49.639 244.400 85.600
+<CMD> deselectAll
+<CMD> selectObject Module us33
+<CMD> setObjFPlanBox Module us33 198.555 1.314 244.354 46.662
+<CMD> setObjFPlanBox Module us33 198.600 15.482 244.400 46.000
+<CMD> setObjFPlanBox Module us33 198.6 12.7725 244.4 43.3725
+<CMD> setObjFPlanBox Module us33 198.600 13.600 244.400 47.011
+<CMD> setObjFPlanBox Module us33 198.6 12.943 244.4 47.143
+<CMD> uiSetTool move
+<CMD> report_timing -max_paths 5 > ${design}.post_route.timing.rpt
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: aes_cipher_top
+# Design Mode: 65nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+End delay calculation. (MEM=1006.02 CPU=0:00:02.1 REAL=0:00:02.0)
+*** CDM Built up (cpu=0:00:05.4  real=0:00:06.0  mem= 1006.0M) ***
+<CMD> report_power -outfile aes_cipher_top.post_route.power.rpt
+
+Power Net Detected:
+    Voltage	    Name
+    0.00V	    gnd
+    0.90V	    vdd
+
+Begin Power Analysis
+
+    0.00V	    gnd
+    0.90V	    vdd
+
+Warning:
+  There are 2 power/gnd nets that are not connected
+gnd vdd ...
+Use 'globalNetConnect' to define rail connections.
+[PowermeterNetlistLib::InfoMergingRails]
+** WARN:  (VOLTUS_POWR-2035): There are 2 power/gnd nets that are not connected
+gnd vdd ...
+Use 'globalNetConnect' to define rail connections.
+
+
+
+Begin Processing Timing Library for Power Calculation
+
+Begin Processing Timing Library for Power Calculation
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total)=802.09MB/802.09MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+clk(847.458MHz) Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total)=804.22MB/804.22MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total)=804.25MB/804.25MB)
+
+Begin Processing Signal Activity
+
+
+Starting Levelizing
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT)
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT): 10%
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT): 20%
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT): 30%
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT): 40%
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT): 50%
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT): 60%
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT): 70%
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT): 80%
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT): 90%
+
+Finished Levelizing
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT)
+
+Starting Activity Propagation
+2020-Jan-29 17:44:38 (2020-Jan-30 01:44:38 GMT)
+** INFO:  (VOLTUS_POWR-1356): No default input activity has been set. Defaulting to 0.2.
+Use 'set_default_switching_activity -input_activity' command to change the default activity value.
+
+2020-Jan-29 17:44:39 (2020-Jan-30 01:44:39 GMT): 10%
+2020-Jan-29 17:44:39 (2020-Jan-30 01:44:39 GMT): 20%
+2020-Jan-29 17:44:39 (2020-Jan-30 01:44:39 GMT): 30%
+2020-Jan-29 17:44:39 (2020-Jan-30 01:44:39 GMT): 40%
+2020-Jan-29 17:44:39 (2020-Jan-30 01:44:39 GMT): 50%
+2020-Jan-29 17:44:39 (2020-Jan-30 01:44:39 GMT): 60%
+2020-Jan-29 17:44:39 (2020-Jan-30 01:44:39 GMT): 70%
+2020-Jan-29 17:44:40 (2020-Jan-30 01:44:40 GMT): 80%
+2020-Jan-29 17:44:40 (2020-Jan-30 01:44:40 GMT): 90%
+
+Finished Activity Propagation
+2020-Jan-29 17:44:40 (2020-Jan-30 01:44:40 GMT)
+Ended Processing Signal Activity: (cpu=0:00:01, real=0:00:01, mem(process/total)=806.47MB/806.47MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 0
+      # of cell(s) missing leakage table: 0
+      # of MSMV cell(s) missing power_level: 0
+      ----------------------------------------------------------
+
+
+
+Starting Calculating power
+2020-Jan-29 17:44:40 (2020-Jan-30 01:44:40 GMT)
+ ... Calculating switching power
+  instance text_out_reg_127_ is not connected to any rail
+  instance text_out_reg_126_ is not connected to any rail
+  instance text_out_reg_125_ is not connected to any rail
+  instance text_out_reg_124_ is not connected to any rail
+  instance text_out_reg_123_ is not connected to any rail
+  only first five unconnected instances are listed...
+2020-Jan-29 17:44:40 (2020-Jan-30 01:44:40 GMT): 10%
+2020-Jan-29 17:44:40 (2020-Jan-30 01:44:40 GMT): 20%
+2020-Jan-29 17:44:40 (2020-Jan-30 01:44:40 GMT): 30%
+2020-Jan-29 17:44:40 (2020-Jan-30 01:44:40 GMT): 40%
+2020-Jan-29 17:44:40 (2020-Jan-30 01:44:40 GMT): 50%
+ ... Calculating internal and leakage power
+2020-Jan-29 17:44:40 (2020-Jan-30 01:44:40 GMT): 60%
+2020-Jan-29 17:44:41 (2020-Jan-30 01:44:41 GMT): 70%
+2020-Jan-29 17:44:41 (2020-Jan-30 01:44:41 GMT): 80%
+2020-Jan-29 17:44:41 (2020-Jan-30 01:44:41 GMT): 90%
+
+Finished Calculating power
+2020-Jan-29 17:44:42 (2020-Jan-30 01:44:42 GMT)
+Ended Power Computation: (cpu=0:00:02, real=0:00:02, mem(process/total)=806.80MB/806.80MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total)=806.84MB/806.84MB)
+
+Ended Power Analysis: (cpu=0:00:04, real=0:00:04, mem(process/total)=806.85MB/806.85MB)
+
+Begin Static Power Report Generation
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:       17.90255359 	   61.4322%
+Total Switching Power:      11.03112097 	   37.8531%
+Total Leakage Power:         0.20828258 	    0.7147%
+Total Power:                29.14195715
+-----------------------------------------------------------------------------------------
+Ended Static Power Report Generation: (cpu=0:00:01, real=0:00:01,
+mem(process/total)=807.06MB/807.06MB)
+
+
+Output file is aes_cipher_top.post_route.power.rpt.
+<CMD> summaryReport -nohtml -outfile aes_cipher_top.post_route.summary.rpt
+Creating directory summaryReport.
+
+**WARN: (IMPDB-1270):	Some nets (467) did not have valid net lengths.
+Report saved in file aes_cipher_top.post_route.summary.rpt.
